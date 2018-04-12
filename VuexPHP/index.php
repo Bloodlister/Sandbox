@@ -11,11 +11,17 @@ require 'app.php';
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Vue x PHP</title>
     <script src="vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.0"></script>
 </head>
 <body>
     <div id="app">
-        <div id="nav"><?= $_SESSION['username'] != null ? $_SESSION['username'] : 'asdasd' ?></div>
-        <testing></testing>
+        <div id="nav">
+            <username user="<?= $_SESSION['username'] != null ? $_SESSION['username'] : 'asdasd' ?>"></username>
+
+            <hr>
+        </div>
+        <loginform></loginform>
+        <sub-component></sub-component>
     </div>
 
     <?php

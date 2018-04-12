@@ -1,6 +1,7 @@
 <?php
 return [
     "components" => [
-        "components/testComp.js",
+        "components/username.js",
+        "components/loginform.js",
     ]
 ];
