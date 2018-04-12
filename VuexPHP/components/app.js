@@ -23,7 +23,7 @@ Vue.component('sub-component', {
     methods: {
         reset: function() {
             Vue.http.options.emulateJSON = true;
-            this.$http.post('/login.php', {test:'aaaa'}).then((response) => {
+            this.$http.post('/login.php', {username:'ninja', pass:'123456'}).then((response) => {
                 console.log(response);
                 this.message = response.body.username;
             })

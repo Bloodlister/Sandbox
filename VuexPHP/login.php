@@ -1,6 +1,6 @@
 <?php
-var_dump($_REQUEST); exit();
 session_start();
+
 if (isset($_SESSION['username'])) {
     header('localhost:3000');
 }
