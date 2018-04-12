@@ -17,8 +17,7 @@ Vue.component('loginform', {
     },
     methods: {
         submit() {
-            Vue.http.options.emulateJSON = true;
-            this.$http.post('/login.php', {username:this.username, pass:this.pass}).then((response) => {
+            Vue.makeRequest('/login.php', {username:this.username, pass:this.pass}).then((response) => {
                 this.$eventHub.$emit("logged", response.body.username);
             })
         }

@@ -16,8 +16,8 @@ require 'app.php';
 <body>
     <div id="app">
         <div id="nav">
-            <username user="<?= $_SESSION['username'] != null ? $_SESSION['username'] : 'asdasd' ?>"></username>
-
+            <username user_prop="<?= $_SESSION['username'] != null ? $_SESSION['username'] : 'No user' ?>"></username>
+            <logout></logout>
             <hr>
         </div>
         <loginform></loginform>

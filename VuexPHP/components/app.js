@@ -1,15 +1,3 @@
-// new Vue({
-//     el: '#app',
-//     methods: {
-//         refreshMessage(resource) {
-//             this.$http.get('/message').then((response) => {
-//                 this.message = response.data.message;
-//             });
-//         }
-//     }
-// })
-
-
 Vue.component('sub-component', {
     template: '<div>Status: {{ message }}</div>',
     data: function() {
@@ -19,12 +7,22 @@ Vue.component('sub-component', {
     },
     mounted: function() {
         this.$eventHub.$on('logged', (data) => {
-            this.message = data;
+            this.setMessage(data);
         })
+    },
+    methods: {
+        setMessage(data) {
+            this.message = data;
+        }
     }
 });
 
 Vue.prototype.$eventHub = new Vue();
+Vue.makeRequest = (path, data) => {
+    data = data === undefined ? {} : data;
+    Vue.http.options.emulateJSON = true;
+    return Vue.http.post(path, data);
+};
 
 new Vue({
     el: '#app'
