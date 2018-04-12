@@ -17,20 +17,15 @@ Vue.component('sub-component', {
             message: 'Not logged'
         }
     },
-    mounted: function () {
-        this.message = this.reset();
-    },
-    methods: {
-        reset: function() {
-            Vue.http.options.emulateJSON = true;
-            this.$http.post('/login.php', {username:'ninja', pass:'123456'}).then((response) => {
-                console.log(response);
-                this.message = response.body.username;
-            })
-        }
+    mounted: function() {
+        this.$eventHub.$on('logged', (data) => {
+            this.message = data;
+        })
     }
 });
 
+Vue.prototype.$eventHub = new Vue();
+
 new Vue({
-    el: '#app',
+    el: '#app'
 });
