@@ -22,6 +22,12 @@ require 'app.php';
         </div>
         <loginform></loginform>
         <sub-component></sub-component>
+        <hr>
+    </div>
+
+    <div id="container">
+        <namefield v-for="n in fields" :field="n"></namefield>
+        <div @click="newField"><button type="button">Magic</button></div>
     </div>
 
     <?php

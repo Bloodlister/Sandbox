@@ -4,5 +4,6 @@ return [
         "components/username.js",
         "components/loginform.js",
         "components/logout.js",
+        "components/namefield.js"
     ]
 ];
