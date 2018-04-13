@@ -21,7 +21,7 @@ Vue.prototype.$eventHub = new Vue();
 Vue.makeRequest = (path, data) => {
     data = data === undefined ? {} : data;
     Vue.http.options.emulateJSON = true;
-    return Vue.http.post(path, data);
+    return Vue.http.post(path, data, {});
 };
 
 new Vue({

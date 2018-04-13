@@ -1,4 +1,5 @@
 <?php
+header('Access-Control-Allow-Origin: /magic.php');
 require 'app.php';
 ?>
 
@@ -23,6 +24,10 @@ require 'app.php';
         <loginform></loginform>
         <sub-component></sub-component>
         <hr>
+        <hr>
+        <hr>
+        <hr>
+        <getname></getname>
     </div>
 
     <div id="container">
