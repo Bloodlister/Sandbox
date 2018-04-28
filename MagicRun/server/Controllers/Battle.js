@@ -12,7 +12,7 @@ router.get('/mock', function (req, res) {
     player.target(target);
     let fireball = new Fireball();
     player.dealDamage(fireball);
-    res.send('');
+    res.send('2');
 });
 
 module.exports = router;
