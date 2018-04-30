@@ -1,17 +1,16 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <character-space></character-space>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
+import CharacterSpace from "./components/CharacterSpace";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    CharacterSpace
   }
 }
 </script>
