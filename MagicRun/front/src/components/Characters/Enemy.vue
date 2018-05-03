@@ -1,17 +1,13 @@
 <script>
-    import Character from './Character';
+    import Unit from './Unit';
     export default {
-        extends: Character,
+        extends: Unit,
         data() {
             return {
+                side: 'enemy',
                 type: "Monster",
                 sub_type: "Imp",
-                inspected: false
             }
         }
     }
 </script>
-
-<style scoped>
-
-</style>

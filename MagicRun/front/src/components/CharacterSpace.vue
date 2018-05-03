@@ -1,9 +1,7 @@
 <template>
-    <div>
-        <h1>Character Space</h1>
+    <div class="character-space">
         <character></character>
         <enemy></enemy>
-        <button v-on:click="characterText()">Test</button>
     </div>
 </template>
 
@@ -14,15 +12,6 @@
         components: {
             Character,
             Enemy
-        },
-        methods: {
-            characterText() {
-                this.$eventBus.$emit("clicked", true);
-            }
         }
     }
 </script>
-
-<style scoped>
-
-</style>

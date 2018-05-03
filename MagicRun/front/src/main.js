@@ -3,9 +3,11 @@
 import Vue from 'vue'
 import App from './App'
 
+import './styles/main.sass'
+
 Vue.config.productionTip = false
 
-Vue.prototype.$eventBus = new Vue();
+Vue.prototype.$eventBus = new Vue()
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
