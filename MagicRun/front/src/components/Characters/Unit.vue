@@ -1,7 +1,7 @@
 <template>
     <div :class="['character', side]" v-on:click="displayInfo()">
-        Hello I'm a {{ type }}!
-        <p v-if="inspected">I am a {{ sub_type }}</p>
+        {{ sub_type }}
+        <p v-if="inspected">Type: {{ sub_type }}</p>
     </div>
 </template>
 
