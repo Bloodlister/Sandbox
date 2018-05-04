@@ -17,17 +17,5 @@ const schema = new Schema({
     }
 });
 
-class Unit {
-    getHealth() {
-        return this.health;
-    }
-
-    takeDamage(damage) {
-        this.health -= damage;
-    }
-}
-
-schema.loadClass(Unit);
-
 
 module.exports = schema;

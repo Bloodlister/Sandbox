@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const UnitSchema = require('./Schemas/Unit');
+const UnitClass = require('./Class/Unit');
 
-const Unit = mongoose.model('unit', UnitSchema);
+UnitSchema.loadClass(UnitClass);
 
-module.exports = Unit;
+const UnitModel = mongoose.model('unit', UnitSchema);
+
+module.exports = UnitModel;
