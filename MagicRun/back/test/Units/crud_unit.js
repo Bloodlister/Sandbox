@@ -1,5 +1,6 @@
 const assert = require('assert');
 const Unit = require('./../../core/Models/Unit');
+const connection = require('./../connection');
 
 describe('Manipulating Unit data in the database.', function () {
     var testUnit;
@@ -31,12 +32,10 @@ describe('Manipulating Unit data in the database.', function () {
     });
 
     it('Update unit info in database.', function (done) {
-        Unit.findOneAndUpdate({ name: "Enthys" }, { type: 'Warrior' })
-            .then(function() {
-                Unit.findOne({ name: "Enthys" }).then(function (result) {
-                    assert(result.type === 'Warrior');
-                    done();
-                });
+        Unit.findOneAndUpdate({ name: "Enthys" }, { type: 'Warrior' }, {new: true})
+            .then(function(result) {
+                assert(result.type === 'Warrior');
+                done();
             });
     });
 
