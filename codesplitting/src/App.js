@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
 import './components/main.css';
-import Page1 from "./components/Page1";
 import AsyncComp from './components/AsyncComp.js';
 
 class App extends Component {
@@ -18,15 +17,12 @@ class App extends Component {
     };
 
     render() {
-        if (this.state.route === 'page1') {
-            return <Page1 onRouteChange={this.onRouteChange}/>;
-        } else if (this.state.route === 'page2') {
-            const AsyncPage2 = AsyncComp(() => import('./components/Page2'));
-            return <AsyncPage2 onRouteChange={this.onRouteChange}/>
-        } else if (this.state.route === 'page3') {
-            const AsyncPage3 = AsyncComp(() => import('./components/Page3'));
-            return <AsyncPage3 onRouteChange={this.onRouteChange}/>
+        if (this.state.route.startsWith('page')) {
+            const pageName = this.state.route[0].toUpperCase() + this.state.route.substring(1);
+            const AsyncPage = AsyncComp(() => import('./components/' + pageName));
+            return <AsyncPage onRouteChange={this.onRouteChange}/>;
         }
+        return null;
     }
 }
 
